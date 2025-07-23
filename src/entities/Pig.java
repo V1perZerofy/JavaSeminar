@@ -1,12 +1,8 @@
 package entities;
 
 public class Pig {
-    private int weight; //in g
+    private int weight; //in kg
     private String Name;
-
-    public static void main(String[] Args){
-
-    }
 
     public Pig() {
         this(230, "Hans");
@@ -54,14 +50,18 @@ public class Pig {
 
     @Override
     public String toString() {
-        return "Pig: name=" + this.getName() + ", weight=" + this.getWeight() + " grams";
+        return "Pig{" +
+                "weight=" + weight +
+                ", Name='" + Name + '\'' +
+                '}';
     }
 
-    public void run(){
-        this.setWeight(this.getWeight() - 100);
+    public void run(int steps){
+        this.setWeight(this.getWeight() - steps);
     }
 
-    public void eat(){
-        this.setWeight(this.getWeight() + 500);
+    public void eat(IEdible i, int units){
+        this.setWeight(this.getWeight() + units);
+        i.getEaten(units);
     }
 }
