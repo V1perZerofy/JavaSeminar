@@ -6,5 +6,7 @@ public class BauernhofSimulator {
         System.out.println(pig1.toString());
         pig1.eat();
         System.out.println(pig1.toString());
+        pig1.run();
+        System.out.println(pig1.toString());
     }
 }
